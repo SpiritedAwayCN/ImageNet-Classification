@@ -1,0 +1,1 @@
+tensorboard --logdir=./resnet_20_cifar10
