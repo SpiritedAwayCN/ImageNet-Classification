@@ -1,15 +1,7 @@
-import keras
-import argparse
 import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import *
 
-# set parameters via parser
-parser = argparse.ArgumentParser()
+image= imread("./pictures/img_0_b'frog'.png")
 
-parser.add_argument('-m','--model', type=str, default='./resnet_20_cifar10.h5', metavar='PATH',
-                help='path of trained model')
-
-args = parser.parse_args()
-
-model = keras.models.load_model(args.model)
-
-print(model.summary())
+print(image.dtype, image[0] * 255)
