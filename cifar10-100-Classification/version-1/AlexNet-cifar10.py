@@ -1,10 +1,11 @@
-# 先用ResNet试一下水，我还在慢慢写orz
+# 先用AlexNet试一下水，我还在慢慢写orz
 
 import keras
 import argparse
 import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
+from keras.layers import Activation, BatchNormalization, Conv2D, MaxPool2D, Flatten, Dense
 
 # set GPU memory 
 if('tensorflow' == keras.backend.backend()):
@@ -26,8 +27,6 @@ parser.add_argument('-n','--stack_n', type=int, default=3, metavar='NUMBER',
 
 args = parser.parse_args()
 
-stack_n            = args.stack_n
-layers             = 6 * stack_n + 2
 num_classes        = 10
 img_rows, img_cols, img_channels = 32, 32, 3
 batch_size         = args.batch_size
@@ -48,56 +47,37 @@ def color_preprocessing(x_train,x_test):
 
 
 def scheduler(epoch):
-    if epoch < 75:
+    if epoch < 60:
         return 0.1
-    elif epoch < 120:
+    elif epoch < 110:
         return 0.01
     return 0.001
 
-def residual_block(x_in, filter_out, increase = False):
-    stride = (2, 2) if increase else (1, 1)
-
-    x1 = keras.layers.Activation('relu')(keras.layers.BatchNormalization(momentum=0.9, epsilon=1e-5)(x_in))
-    x2 = keras.layers.Conv2D(filters=filter_out,kernel_size=(3,3),strides=stride,padding='same',
-            kernel_initializer="he_normal",
-            kernel_regularizer=keras.regularizers.l2(weight_decay))(x1)
-    x3 = keras.layers.Activation('relu')(keras.layers.BatchNormalization(momentum=0.9, epsilon=1e-5)(x2))
-    x4 = keras.layers.Conv2D(filters=filter_out,kernel_size=(3,3),strides=(1,1),padding='same',
-            kernel_initializer="he_normal",
-            kernel_regularizer=keras.regularizers.l2(weight_decay))(x3)
-    if increase:
-        res = keras.layers.Conv2D(filters=filter_out,kernel_size=(3,3),strides=stride,padding='same',
+def alexNetInference(img_input, num_classes):
+    conv1 = Conv2D(filters=48, kernel_size=(5,5), strides=(1,1), padding="same",
                 kernel_initializer="he_normal",
-                kernel_regularizer=keras.regularizers.l2(weight_decay))(x1)
-        return keras.layers.add([x4, res])
-    else:
-        return keras.layers.add([x4, x_in])
-        
+                kernel_regularizer=keras.regularizers.l2(weight_decay))(img_input)
 
+    norm1 = Activation('relu')(keras.layers.BatchNormalization(momentum=0.9, epsilon=1e-5)(conv1))
+    pool1 = MaxPool2D(pool_size=(3, 3), strides=(2, 2), padding='same')(norm1)
 
-def residual_network(img_input, num_classes, stack_n):
-    x = keras.layers.Conv2D(filters=16,kernel_size=(3,3),strides=(1,1),padding='same',
-            kernel_initializer="he_normal",
-            kernel_regularizer=keras.regularizers.l2(weight_decay))(img_input)
-    
-    for _ in range(stack_n):
-        x = residual_block(x, 16, False)
-    
-    x = residual_block(x, 32, True)
-    for _ in range(stack_n):
-        x = residual_block(x, 32, False)
-    
-    x = residual_block(x, 64, True)
-    for _ in range(stack_n):
-        x = residual_block(x, 64, False)
-    
-    x = keras.layers.Activation('relu')(keras.layers.BatchNormalization(momentum=0.9, epsilon=1e-5)(x))
-    x = keras.layers.GlobalAveragePooling2D()(x)
+    conv2 = Conv2D(filters=72, kernel_size=(5,5), strides=(1,1), padding="same",
+                kernel_initializer="he_normal",
+                kernel_regularizer=keras.regularizers.l2(weight_decay))(pool1)
+    norm2 = Activation('relu')(keras.layers.BatchNormalization(momentum=0.9, epsilon=1e-5)(conv2))
+    pool2 = MaxPool2D(pool_size=(3, 3), strides=(2, 2), padding='same')(norm2)
 
-    x = keras.layers.Dense(num_classes ,activation='softmax',kernel_initializer="he_normal",
-              kernel_regularizer=keras.regularizers.l2(weight_decay))(x)
-    
-    return x
+    conv3 = Conv2D(filters=112, kernel_size=(3,3), strides=(1, 1), padding="same",
+                kernel_initializer="he_normal", activation="relu",
+                kernel_regularizer=keras.regularizers.l2(weight_decay))(pool2)
+    pool3 = MaxPool2D(pool_size=(3, 3), strides=(2, 2), padding='same')(conv3)
+
+    flatten = Flatten()(pool3)
+    dense1 = Dense(256, activation='relu',kernel_initializer="he_normal",
+                kernel_regularizer=keras.regularizers.l2(weight_decay))(flatten)
+    return Dense(num_classes ,activation='softmax',kernel_initializer="he_normal",
+                kernel_regularizer=keras.regularizers.l2(weight_decay))(dense1)
+
 
 if __name__ == '__main__':
     # 这段大部分也是网上的
@@ -114,17 +94,18 @@ if __name__ == '__main__':
     print("== DONE! ==\n== BUILD MODEL... ==")
     # build network
     img_input = keras.layers.Input(shape=(img_rows,img_cols,img_channels))
-    output = residual_network(img_input,num_classes,stack_n)
-    resnet = keras.models.Model(img_input, output)
+    output = alexNetInference(img_input,num_classes)
+    alexnet = keras.models.Model(img_input, output)
 
-    print(resnet.summary())
+    print(alexnet.summary())
 
     sgd = keras.optimizers.SGD(lr=.1, momentum=0.9, nesterov=True)
-    resnet.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+    alexnet.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+    alexnet.load_weights("checkpoint-40.h5")
 
-    cbks = [TensorBoard(log_dir='./resnet_{:d}_cifar10/'.format(layers), histogram_freq=0),
+    cbks = [TensorBoard(log_dir='./alexNet_cifar10/', histogram_freq=0),
             LearningRateScheduler(scheduler),
-            ModelCheckpoint('./checkpoint-{epoch}.h5', save_best_only=False, mode='auto', period=5)]
+            ModelCheckpoint('./checkpoint-{epoch}.h5', save_best_only=False, mode='auto', period=10)]
 
     # set data augmentation
     print("== USING REAL-TIME DATA AUGMENTATION, START TRAIN... ==")
@@ -136,9 +117,10 @@ if __name__ == '__main__':
     datagen.fit(x_train)
 
     # start training
-    resnet.fit_generator(datagen.flow(x_train, y_train,batch_size=batch_size),
+    alexnet.fit_generator(datagen.flow(x_train, y_train,batch_size=batch_size),
                          steps_per_epoch=iterations,
                          epochs=epochs,
                          callbacks=cbks,
-                         validation_data=(x_test, y_test))
-    resnet.save('resnet_{:d}_cifar10.h5'.format(layers))
+                         validation_data=(x_test, y_test),
+                         initial_epoch=40)
+    alexnet.save('alexNet_cifar10.h5')

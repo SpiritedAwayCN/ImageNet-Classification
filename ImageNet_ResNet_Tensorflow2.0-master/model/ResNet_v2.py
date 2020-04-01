@@ -117,7 +117,7 @@ class ResNet_v2(tf.keras.models.Model):
         return net
 
 if __name__ == '__main__':
-    model = ResNet_v2(18)
+    model = ResNet_v2(50)
     model.build((None,) + c.input_shape)
     model.summary()
 
