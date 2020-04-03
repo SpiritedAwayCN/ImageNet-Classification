@@ -1,12 +1,12 @@
 # 先用AlexNet试一下水，我还在慢慢写orz
 
-import keras
+from tensorflow.python import keras
 import argparse
 import numpy as np
 from get_checkpoint import get_checkpoint
-from keras.preprocessing.image import ImageDataGenerator
-from keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
-from keras.layers import Activation, BatchNormalization, Conv2D, MaxPool2D, Flatten, Dense
+from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.python.keras.callbacks import LearningRateScheduler, TensorBoard, ModelCheckpoint
+from tensorflow.python.keras.layers import Activation, BatchNormalization, Conv2D, MaxPool2D, Flatten, Dense
 
 # set GPU memory 
 if('tensorflow' == keras.backend.backend()):

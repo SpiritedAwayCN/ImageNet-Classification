@@ -1,7 +1,7 @@
 import tensorflow as tf
-import keras
-from keras.layers import Conv2D, GlobalAvgPool2D, BatchNormalization, Dense, Activation, AvgPool2D, MaxPool2D, Input
-from keras.regularizers import l2
+from tensorflow.python import keras
+from tensorflow.python.keras.layers import Conv2D, GlobalAvgPool2D, BatchNormalization, Dense, Activation, AvgPool2D, MaxPool2D, Input
+from tensorflow.python.keras.regularizers import l2
 
 _weight_decay = 1e-4
 _category_num = 1000
