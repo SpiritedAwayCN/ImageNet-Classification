@@ -1,6 +1,5 @@
 import tensorflow as tf
-from tensorflow.python import keras
-import tensorflow_datasets as tfds
+from tensorflow import keras
 import numpy as np
 import os
 import cv2
@@ -18,7 +17,7 @@ def load_list(list_path, image_path):
 
 def rescale_short_edge(image, size = None):
     if size is None:
-        new_size = np.random.randint(256, 384)
+        new_size = np.random.randint(256, 288)
     height, weight, _ = np.shape(image)
     ratio = new_size / min(height, weight)
     return cv2.resize(image, (int(weight * ratio), int(height * ratio)))
@@ -47,7 +46,7 @@ def augment(image):
         image = cv2.flip(image, 1)
 
     # hsv上的偏移
-    offset_h = np.random.uniform(-36, 36) #这个不能太过分
+    offset_h = np.random.uniform(-18, 18) #这个不能太过分
     offset_s = np.random.uniform(0.6, 1.4)
     offset_v = np.random.uniform(0.6, 1.4)
     image_hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
@@ -70,38 +69,42 @@ def load_image(path, labels, augments=False):
         image = augment(image)
     else:
         rescale_short_edge(image, size=256)
-        # TODO 裁剪中心224x224
+        height, width, _ = np.shape(image)
+        input_height, input_width, _ = c.input_shape
+        crop_x = (width - input_width) // 2
+        crop_y = (height - input_height) // 2
+        image = image[crop_y: crop_y + input_height, crop_x: crop_x + input_width, :]
 
     
     # 可视化请注释以下部分
-    # for i in range(3):
-    #     image[..., i] = (image[..., i] - c.mean[i]) / c.std[i]
+    for i in range(3):
+        image[..., i] = (image[..., i] - c.mean[i]) / c.std[i]
 
     label = keras.utils.to_categorical(labels, 1000)
     return image, label
 
-def _parser(path, labels):
-    return tf.py_function(load_image, inp=[path, labels, False], Tout=[tf.float32, tf.float32])
-
-def _parser_with_augment(path, labels):
-    return tf.py_function(load_image, inp=[path, labels, True], Tout=[tf.float32, tf.float32])
-
-def train_iteration(list_path="train_label.txt"):
+def get_train_dataset(list_path="train_label.txt"):
     images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\train")
     dataset = tf.data.Dataset.from_tensor_slices((images, labels))
     dataset = dataset.shuffle(len(images)).repeat()
-    dataset = dataset.map(_parser_with_augment, num_parallel_calls=tf.data.experimental.AUTOTUNE)
-    dataset = dataset.batch(128)
-    return dataset.make_one_shot_iterator()
+    dataset = dataset.map(lambda x, y: tf.py_function(load_image, inp=[x, y, True], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
+    dataset = dataset.batch(c.batch_size)
+    return dataset
+
+def get_val_dataset(list_path="validation_label.txt"):
+    images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\val")
+    dataset = tf.data.Dataset.from_tensor_slices((images, labels))
+    dataset = dataset.map(lambda x, y: tf.py_function(load_image, inp=[x, y, False], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
+    dataset = dataset.batch(c.batch_size)
+    return dataset
 
 if __name__=='__main__':
-    train_iter = train_iteration()
+    train_iter = get_train_dataset().__iter__()
 
-    with tf.Session() as sess:
-        image, labels = sess.run(train_iter.get_next())
+    image, labels =train_iter.next()
+    print(np.shape(image), np.shape(labels))
 
-        print(np.shape(image))
-        for i in range(10):
-            cv2.imshow('show', image[i].astype(np.uint8))
-            cv2.waitKey(0)
-        cv2.destroyAllWindows()
+    for i in range(10):
+        cv2.imshow('show', image[i].numpy().astype(np.uint8))
+        cv2.waitKey(0)
+    cv2.destroyAllWindows()

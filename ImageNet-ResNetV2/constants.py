@@ -1,4 +1,11 @@
 input_shape = 224, 224, 3
+batch_size = 128
+train_num = 1281167
+
+iterations_per_epoch = train_num // batch_size + 1
+
+weight_decay = 1e-4
+label_smoothing = 0.1
 
 # 这些是别人算好的
 mean = [103.939, 116.779, 123.68]

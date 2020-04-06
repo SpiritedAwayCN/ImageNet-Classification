@@ -2,3 +2,4 @@
 ResNet-Keras/checkpoints/*
 Official-Sample/tmp/*
 *.h5
+*/.vscode/*
