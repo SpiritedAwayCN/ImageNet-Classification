@@ -1,8 +1,13 @@
 input_shape = 224, 224, 3
+num_class = 1000
+total_epoches = 50
+
 batch_size = 128
 train_num = 1281167
+val_num = 50000
 
 iterations_per_epoch = train_num // batch_size + 1
+test_iterations = val_num // batch_size + 1
 
 weight_decay = 1e-4
 label_smoothing = 0.1

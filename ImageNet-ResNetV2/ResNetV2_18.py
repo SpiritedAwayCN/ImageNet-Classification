@@ -2,74 +2,56 @@ import tensorflow as tf
 import constants as c
 from tensorflow.keras.layers import Conv2D, GlobalAvgPool2D, BatchNormalization, Dense, Activation, AvgPool2D, MaxPooling2D
 
-class BottleneckBlock(tf.keras.layers.Layer):
-    # reference: https://keras.io/layers/writing-your-own-keras-layers/
-    def __init__(self, filters=None, strides=(1, 1), projection=False, **kwargs):
-        # self.filters = filters
+class BasicBlock(tf.keras.layers.Layer):
+    def __init__(self, filters, strides=(1, 1), **kwargs):
         self.strides = strides
-        self.projection = projection
-        if projection or strides != (1, 1):
-            self.shortcut = Conv2D(filters * 4, (1, 1), padding='same',use_bias=False)
-            if not projection:
-                self.avgpool = AvgPool2D((2, 2), strides=(2, 2), padding='same')
+        if strides != (1, 1):
+            self.shortcut = Conv2D(filters, (1, 1), padding='same', use_bias=False)
 
-        self.conv_0 = Conv2D(filters, (1, 1), strides=(1, 1), padding='same', use_bias=False)
-        self.conv_1 = Conv2D(filters, (3, 3), strides=strides, padding='same', use_bias=False)
-        self.conv_2 = Conv2D(filters * 4, (1, 1), strides=(1, 1), padding='same', use_bias=False)
+        self.conv_0 = Conv2D(filters, (3, 3), strides=strides, padding='same', use_bias=False)
+        self.conv_1 = Conv2D(filters, (3, 3), padding='same', use_bias=False)
         self.bn_0 = BatchNormalization(momentum=0.9, epsilon=1e-5)
         self.bn_1 = BatchNormalization(momentum=0.9, epsilon=1e-5)
-        self.bn_2 = BatchNormalization(momentum=0.9, epsilon=1e-5)
         self.activation0 = Activation('relu')
         self.activation1 = Activation('relu')
-        self.activation2 = Activation('relu')
-        super(BottleneckBlock, self).__init__(**kwargs)
-    
+        self.avgpool = AvgPool2D((2, 2), strides=(2, 2), padding='same')
+        super(BasicBlock, self).__init__(**kwargs)
+
     def call(self, inputs, training):
         res = self.bn_0(inputs, training=training)
         res = self.activation0(res)
-        
-        if self.projection:
-            shortcut = self.shortcut(res)
-        elif self.strides != (1, 1):
-            shortcut = self.avgpool(res) # 长宽除以2
+
+        if self.strides != (1, 1):
+            shortcut = self.avgpool(res)
             shortcut = self.shortcut(shortcut)
         else:
-            shortcut = res
-        
-        res = self.conv_0(res)
+            shortcut = inputs
 
+        res = self.conv_0(res)
         res = self.bn_1(res, training=training)
         res = self.activation1(res)
         res = self.conv_1(res)
 
-        res = self.bn_2(res, training=training)
-        res = self.activation2(res)
-        res = self.conv_2(res)
-
         output = res + shortcut
-        return res
-    
-    # 不写貌似也没啥问题
-    # def compute_output_shape(self, input_shape):
-    #     return (input_shape[0], input_shape[1]/self.strides[0], input_shape[2]/self.strides[1], input_shape[3])
+        return output
 
-class ResNet_v2_50(tf.keras.models.Model):
+class ResNet_v2_18(tf.keras.models.Model):
     def __init__(self, **kwargs):
-        super(ResNet_v2_50, self).__init__(**kwargs)
+        super(ResNet_v2_18, self).__init__(**kwargs)
 
         self.conv0 = Conv2D(64, (7, 7), strides=(2, 2), name='conv0', padding='same', use_bias=False)
         self.maxpool = MaxPooling2D((3, 3), strides=(2, 2), padding='same')
         self.block_collector = []
-        block_num = 3, 4, 6, 3
+        block_num = 2, 2, 2, 2
         filters_num = 64, 128, 256, 512
         for i in range(1, 5):
             if i == 1:
-                self.block_collector.append(BottleneckBlock(filters_num[i-1], projection=True, name='conv1_0'))
+                self.block_collector.append(BasicBlock(filters_num[i-1], name='conv1_0'))
             else:
-                self.block_collector.append(BottleneckBlock(filters_num[i-1], strides=(2, 2), name='conv{}_0'.format(i)))
+                self.block_collector.append(BasicBlock(filters_num[i-1], strides=(2, 2), name='conv{}_0'.format(i)))
 
             for j in range(1, block_num[i-1]):
-                self.block_collector.append(BottleneckBlock(filters_num[i-1], name='conv{}_{}'.format(i, j)))
+                self.block_collector.append(BasicBlock(filters_num[i-1], name='conv{}_{}'.format(i, j)))
 
         self.bn = BatchNormalization(name='bn', momentum=0.9, epsilon=1e-5)
         self.activation = Activation('relu')
@@ -94,10 +76,9 @@ class ResNet_v2_50(tf.keras.models.Model):
         net = self.fc(net)
         # print('fully connected', net.shape)
         return net
-
-
+    
 if __name__=='__main__':
-    model = ResNet_v2_50()
+    model = ResNet_v2_18()
     model.build((None, ) + c.input_shape)
 
     cnt1 = cnt2 = 0

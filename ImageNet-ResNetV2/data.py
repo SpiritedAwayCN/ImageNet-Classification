@@ -15,8 +15,8 @@ def load_list(list_path, image_path):
             labels.append(int(line[1]))
     return images, labels
 
-def rescale_short_edge(image, size = None):
-    if size is None:
+def rescale_short_edge(image, new_size = None):
+    if new_size is None:
         new_size = np.random.randint(256, 288)
     height, weight, _ = np.shape(image)
     ratio = new_size / min(height, weight)
@@ -68,7 +68,7 @@ def load_image(path, labels, augments=False):
     if augments:
         image = augment(image)
     else:
-        rescale_short_edge(image, size=256)
+        image = rescale_short_edge(image, new_size=256)
         height, width, _ = np.shape(image)
         input_height, input_width, _ = c.input_shape
         crop_x = (width - input_width) // 2
@@ -80,26 +80,65 @@ def load_image(path, labels, augments=False):
     for i in range(3):
         image[..., i] = (image[..., i] - c.mean[i]) / c.std[i]
 
-    label = keras.utils.to_categorical(labels, 1000)
+    label = keras.utils.to_categorical(labels, c.num_class)
+    return image, label
+
+def load_image_multicrop(path, labels):
+    image = cv2.imread(path.numpy().decode()).astype(np.float32)
+    image = rescale_short_edge(image, new_size=256)
+
+    height, width, _ = np.shape(image)
+    input_height, input_width, _ = c.input_shape
+    center_crop_x = (width - input_width) // 2
+    center_crop_y = (height - input_height) // 2
+
+    images = []
+    images.append(image[:input_height, :input_width, :])  # left top
+    images.append(image[:input_height, -input_width:, :])  # right top
+    images.append(image[-input_height:, :input_width, :])  # left bottom
+    images.append(image[-input_height:, -input_width:, :])  # right bottom
+    images.append(image[center_crop_y: center_crop_y + input_height, center_crop_x: center_crop_x + input_width, :])
+
+    image = cv2.flip(image, 1)
+    images.append(image[:input_height, :input_width, :])  # left top
+    images.append(image[:input_height, -input_width:, :])  # right top
+    images.append(image[-input_height:, :input_width, :])  # left bottom
+    images.append(image[-input_height:, -input_width:, :])  # right bottom
+    images.append(image[center_crop_y: center_crop_y + input_height, center_crop_x: center_crop_x + input_width, :])
+
+    image = np.array(images, dtype=np.float32)
+
+    for i in range(3):
+        image[..., i] = (image[..., i] - c.mean[i]) / c.std[i]
+    label = keras.utils.to_categorical(labels, c.num_class)
     return image, label
 
 def get_train_dataset(list_path="train_label.txt"):
     images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\train")
+    # images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\train")
     dataset = tf.data.Dataset.from_tensor_slices((images, labels))
     dataset = dataset.shuffle(len(images)).repeat()
     dataset = dataset.map(lambda x, y: tf.py_function(load_image, inp=[x, y, True], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
     dataset = dataset.batch(c.batch_size)
     return dataset
 
-def get_val_dataset(list_path="validation_label.txt"):
+def get_val_dataset(list_path="val_label.txt"):
     images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\val")
+    # images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\val")
     dataset = tf.data.Dataset.from_tensor_slices((images, labels))
     dataset = dataset.map(lambda x, y: tf.py_function(load_image, inp=[x, y, False], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
     dataset = dataset.batch(c.batch_size)
     return dataset
 
+def get_predict_dataset(list_path="val_label.txt"):
+    images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\val")
+    # images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\test")
+    dataset = tf.data.Dataset.from_tensor_slices((images, labels))
+    dataset = dataset.map(lambda x, y: tf.py_function(load_image_multicrop, inp=[x, y], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
+    return dataset
+
 if __name__=='__main__':
-    train_iter = get_train_dataset().__iter__()
+    train_iter = get_val_dataset().__iter__()
 
     image, labels =train_iter.next()
     print(np.shape(image), np.shape(labels))
