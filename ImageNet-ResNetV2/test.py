@@ -21,7 +21,7 @@ def test(model):
 
     print("testing...")
 
-    with trange(c.test_iterations) as t:
+    with trange(c.test_iterations, ncols=140) as t:
         for i in t:
             images, labels = data_iterator.next()
 
@@ -47,7 +47,7 @@ def test_multicrop(model, top_k=1):
 
     print("testing multicrop (top-{:d})...".format(top_k))
 
-    with trange(c.val_num) as t:
+    with trange(c.val_num, ncols=140) as t:
         for i in t:
             images, labels = data_iterator.next()
             prediction = test_multicrop_step(model, images)

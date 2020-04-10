@@ -38,7 +38,7 @@ def warmup(model, data_iter):
     learning_rate_schedules = keras.optimizers.schedules.PolynomialDecay(initial_learning_rate=0.0001,decay_steps=c.iterations_per_epoch,end_learning_rate=0.05)
     optimizer = keras.optimizers.SGD(learning_rate=learning_rate_schedules, momentum=0.9, nesterov=True)
 
-    with trange(c.iterations_per_epoch) as t:
+    with trange(c.iterations_per_epoch, ncols=140) as t:
         for i in t:
             images, labels = data_iter.next()
             loss, prediction = warmup_step(model, images, labels, optimizer)
@@ -46,7 +46,7 @@ def warmup(model, data_iter):
             t.set_postfix_str('loss: {:.4f}, accurancy: {:.4f}'.format(loss, correct_num / images.shape[0]))
 
 def train(model, data_iter, optimizer):
-    with trange(c.iterations_per_epoch) as t:
+    with trange(c.iterations_per_epoch, ncols=140) as t:
         for i in t:
             images, labels = data_iter.next()
             loss, prediction = train_step(model, images, labels, optimizer)
