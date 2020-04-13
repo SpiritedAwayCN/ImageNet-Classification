@@ -1,8 +1,5 @@
-import sys
 import cv2
-from tqdm import trange
 import numpy as np
-from imageio import imread, imwrite
 from scipy.ndimage.filters import convolve
 
 
@@ -38,7 +35,7 @@ def calc_energy(img):
 def crop_c(img):
     r, c, _ = img.shape
 
-    for i in trange(c - 224):
+    for i in range(c - 224):
         img = carve_column(img)
 
     return img
@@ -101,7 +98,7 @@ def rescale_short_edge(image, size=None):
     return cv2.resize(image, (int(weight * ratio), int(height * ratio)))
 
 
-def seam_carving(img):
+def carve(img):
     r, c, _ = img.shape
     img = rescale_short_edge(img, 224)
     if r > c:
@@ -109,4 +106,3 @@ def seam_carving(img):
     else:
         out = crop_c(img)
     return out
-
