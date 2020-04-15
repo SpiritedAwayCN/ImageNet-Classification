@@ -49,6 +49,7 @@ class BottleneckBlock(tf.keras.layers.Layer):
 
     def call(self, inputs, training):
         net = self.bn_0(inputs, training=training)
+
         net = tf.nn.relu(net)
 
         if self.projection:
@@ -58,7 +59,6 @@ class BottleneckBlock(tf.keras.layers.Layer):
                 shortcut = self.shortcut(shortcut)
         else:
             shortcut = inputs
-
         net = self.conv_0(net)
         net = self.bn_1(net, training=training)
         net = tf.nn.relu(net)
@@ -66,7 +66,6 @@ class BottleneckBlock(tf.keras.layers.Layer):
         net = self.bn_2(net, training=training)
         net = tf.nn.relu(net)
         net = self.conv_2(net)
-
         output = net + shortcut
         return output
 
@@ -102,6 +101,7 @@ class ResNet_v2(tf.keras.models.Model):
         print('input', inputs.shape)
         print('conv0', net.shape)
         net = tf.nn.max_pool2d(net, ksize=(3, 3), strides=(2, 2), padding='SAME')
+
         print('max-pooling', net.shape)
 
         for block in self.block_collector:
@@ -114,6 +114,7 @@ class ResNet_v2(tf.keras.models.Model):
         print('global average-pooling', net.shape)
         net = self.fc(net)
         print('fully connected', net.shape)
+
         return net
 
 if __name__ == '__main__':

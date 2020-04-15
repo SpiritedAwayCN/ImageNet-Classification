@@ -8,8 +8,8 @@ from model.ResNet_v2 import ResNet_v2
 from utils.data_utils import load_image
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
-model_path = 'result/weight/ResNet_50_v2.h5'
-image_path = 'ILSVRC2012_val_00000321.JPEG'
+model_path = 'result/weights/ResNet_50_v2.h5'
+image_path = 'image.jpg'
 
 if __name__ == '__main__':
     # gpu config

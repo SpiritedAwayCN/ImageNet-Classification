@@ -1,5 +1,5 @@
 input_shape = 224, 224, 3
-num_class = 100
+num_class = 1000
 total_epoches = 50
 
 batch_size = 128
