@@ -84,7 +84,7 @@ def load_image(path, labels, augments=False):
     label = keras.utils.to_categorical(labels, c.num_class)
     return image, label
 
-def load_image_multicrop(path, labels):
+def load_image_multicrop(path, labels, seam_carv=False):
     image = cv2.imread(path.numpy().decode()).astype(np.float32)
     image = rescale_short_edge(image, new_size=256)
 
@@ -107,7 +107,8 @@ def load_image_multicrop(path, labels):
     images.append(image[-input_height:, -input_width:, :])  # right bottom
     images.append(image[center_crop_y: center_crop_y + input_height, center_crop_x: center_crop_x + input_width, :])
 
-    images.append(seam_carving.carve(image))
+    if seam_carv == True:
+        images.append(seam_carving.carve(image))
     
     image = np.array(images, dtype=np.float32)
 
