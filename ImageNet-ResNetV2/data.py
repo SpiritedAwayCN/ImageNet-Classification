@@ -4,6 +4,7 @@ import numpy as np
 import os
 import cv2
 import constants as c
+import seam_carving
 
 def load_list(list_path, image_path):
     images = []
@@ -106,6 +107,8 @@ def load_image_multicrop(path, labels):
     images.append(image[-input_height:, -input_width:, :])  # right bottom
     images.append(image[center_crop_y: center_crop_y + input_height, center_crop_x: center_crop_x + input_width, :])
 
+    images.append(seam_carving.carve(image))
+    
     image = np.array(images, dtype=np.float32)
 
     for i in range(3):
