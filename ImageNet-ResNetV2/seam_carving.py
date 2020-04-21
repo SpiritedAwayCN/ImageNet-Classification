@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from tqdm import trange
 from scipy.ndimage.filters import convolve
 
 
@@ -35,7 +36,7 @@ def calc_energy(img):
 def crop_c(img):
     r, c, _ = img.shape
 
-    for i in range(c - 224):
+    for i in trange(c - 224):
         img = carve_column(img)
 
     return img

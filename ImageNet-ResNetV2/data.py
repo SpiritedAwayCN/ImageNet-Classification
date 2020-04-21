@@ -84,7 +84,7 @@ def load_image(path, labels, augments=False):
     label = keras.utils.to_categorical(labels, c.num_class)
     return image, label
 
-def load_image_multicrop(path, labels, seam_carv=True):
+def load_image_multicrop(path, labels, seam_carv=False):
     image = cv2.imread(path.numpy().decode()).astype(np.float32)
     image = rescale_short_edge(image, new_size=256)
 
@@ -134,7 +134,7 @@ def get_val_dataset(list_path="val_label.txt"):
     dataset = dataset.batch(c.batch_size)
     return dataset
 
-def get_predict_dataset(list_path="E:\Programming Projects\ILSVRC2012\mini-imagenet\\val_label - 副本.txt"):
+def get_predict_dataset(list_path="E:\Programming Projects\ILSVRC2012\mini-imagenet\\val_label.txt"):
     # images, labels = load_list(list_path, "./ILSVRC2012/val")
     images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\val")
     dataset = tf.data.Dataset.from_tensor_slices((images, labels))
