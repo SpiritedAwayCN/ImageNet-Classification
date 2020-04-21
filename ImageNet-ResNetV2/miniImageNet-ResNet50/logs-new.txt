@@ -1,0 +1,319 @@
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 2.2847, accurancy: 0.7812]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.65it/s, ce: 1.6083, accuracy: 0.6250]
+accuracy 0.7002
+Epoch 19/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 2.2026, accurancy: 0.8125]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.5493, accuracy: 0.7500]
+accuracy 0.6846
+Epoch 20/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 2.0263, accurancy: 0.8594]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.2983, accuracy: 0.7500]
+accuracy 0.7016
+Epoch 21/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 2.0630, accurancy: 0.8281]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.8532, accuracy: 0.6250]
+accuracy 0.7206
+Epoch 22/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.9319, accurancy: 0.8750]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.6504, accuracy: 0.6250]
+accuracy 0.7214
+Epoch 23/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.9770, accurancy: 0.8906]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.65it/s, ce: 1.1901, accuracy: 0.8750]
+accuracy 0.7298
+Epoch 24/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.9322, accurancy: 0.8828]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.9424, accuracy: 0.5000]
+accuracy 0.7210
+Epoch 25/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.9344, accurancy: 0.8672]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.5503, accuracy: 0.7500]
+accuracy 0.7216
+Epoch 26/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.7176, accurancy: 0.9297]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.3935, accuracy: 0.8750]
+accuracy 0.7228
+Epoch 27/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.8799, accurancy: 0.8828]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.9798, accuracy: 0.5000]
+accuracy 0.7358
+Epoch 28/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.8039, accurancy: 0.8984]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.2830, accuracy: 0.8750]
+accuracy 0.7460
+Epoch 29/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.8313, accurancy: 0.8984]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.68it/s, ce: 1.2115, accuracy: 0.8750]
+accuracy 0.7472
+Epoch 30/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.6948, accurancy: 0.9609]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.1040, accuracy: 1.0000]
+accuracy 0.7502
+Epoch 31/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.7061, accurancy: 0.8984]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.65it/s, ce: 1.3402, accuracy: 0.7500]
+accuracy 0.7588
+Epoch 32/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.6344, accurancy: 0.9375]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.66it/s, ce: 1.3023, accuracy: 0.8750]
+accuracy 0.7590
+Epoch 33/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.6766, accurancy: 0.9219]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.62it/s, ce: 1.5128, accuracy: 0.6250]
+accuracy 0.7594
+Epoch 34/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.5959, accurancy: 0.9609]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.65it/s, ce: 1.4651, accuracy: 0.7500]
+accuracy 0.7664
+Epoch 35/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.6245, accurancy: 0.9297]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.4052, accuracy: 0.6250]
+accuracy 0.7714
+Epoch 36/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.5540, accurancy: 0.9766]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.3027, accuracy: 0.8750]
+accuracy 0.7730
+Epoch 37/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.5553, accurancy: 0.9688]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.5027, accuracy: 0.6250]
+accuracy 0.7776
+Epoch 38/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.5751, accurancy: 0.9375]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.61it/s, ce: 1.4007, accuracy: 0.6250]
+accuracy 0.7752
+Epoch 39/50
+100%|████████████████████████████| 391/391 [04:22<00:00,  1.49it/s, loss: 1.5337, accurancy: 0.9609]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.1652, accuracy: 0.8750]
+accuracy 0.7822
+Epoch 40/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.5558, accurancy: 0.9609]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.61it/s, ce: 1.2841, accuracy: 0.7500]
+accuracy 0.7794
+Epoch 41/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.4783, accurancy: 0.9844]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.1839, accuracy: 1.0000]
+accuracy 0.7840
+Epoch 42/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.5405, accurancy: 0.9609]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.1948, accuracy: 0.8750]
+accuracy 0.7820
+Epoch 43/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.4489, accurancy: 0.9922]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.2358, accuracy: 0.8750]
+accuracy 0.7854
+Epoch 44/50
+100%|████████████████████████████| 391/391 [04:22<00:00,  1.49it/s, loss: 1.4731, accurancy: 0.9844]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.62it/s, ce: 1.2723, accuracy: 0.8750]
+accuracy 0.7850
+Epoch 45/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.4825, accurancy: 1.0000]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.61it/s, ce: 1.3340, accuracy: 0.7500]
+accuracy 0.7854
+Epoch 46/50
+100%|████████████████████████████| 391/391 [04:22<00:00,  1.49it/s, loss: 1.5022, accurancy: 0.9766]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.2372, accuracy: 0.8750]
+accuracy 0.7878
+Epoch 47/50
+100%|████████████████████████████| 391/391 [04:22<00:00,  1.49it/s, loss: 1.4560, accurancy: 0.9922]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.65it/s, ce: 1.2706, accuracy: 0.7500]
+accuracy 0.7872
+Epoch 48/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.4475, accurancy: 0.9922]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.2732, accuracy: 0.7500]
+accuracy 0.7846
+Epoch 49/50
+100%|████████████████████████████| 391/391 [04:21<00:00,  1.49it/s, loss: 1.4846, accurancy: 0.9844]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.2768, accuracy: 0.8750]
+accuracy 0.7870
+Epoch 50/50
+100%|████████████████████████████| 391/391 [04:22<00:00,  1.49it/s, loss: 1.4656, accurancy: 0.9766]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.2423, accuracy: 0.8750]
+accuracy 0.7844
+2020-04-20 18:17:04.207870: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-04-20 18:17:04.220149: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.220487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 18:17:04.220672: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 18:17:04.221882: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 18:17:04.222957: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 18:17:04.223166: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 18:17:04.224345: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 18:17:04.224989: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 18:17:04.227454: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 18:17:04.227565: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.228003: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.228354: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 18:17:04.317700: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-04-20 18:17:04.340231: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3696000000 Hz
+2020-04-20 18:17:04.341009: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560f4d8a4240 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-20 18:17:04.341034: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-20 18:17:04.341190: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.341517: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 18:17:04.341556: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 18:17:04.341571: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 18:17:04.341584: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 18:17:04.341598: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 18:17:04.341618: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 18:17:04.341637: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 18:17:04.341651: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 18:17:04.341709: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.342056: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.342349: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 18:17:04.342376: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 18:17:04.411008: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-20 18:17:04.411038: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0
+2020-04-20 18:17:04.411046: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N
+2020-04-20 18:17:04.411180: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.411667: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.412023: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:17:04.412353: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10478 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-04-20 18:17:04.413589: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560f4e0641e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-04-20 18:17:04.413605: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1080 Ti, Compute Capability 6.1
+testing multicrop (top-5)...
+  0%|                                                                      | 0/5000 [00:00<?, ?it/s]2020-04-20 18:17:06.525727: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 18:17:06.658295: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+100%|████████████████████████████████████████| 5000/5000 [01:34<00:00, 52.75it/s, correct_num: 4742]
+top-1 accuracy 0.8144, top-5 accuracy 0.9484.
+2020-04-20 18:18:42.543066: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-04-20 18:18:42.553667: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.554022: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 18:18:42.554176: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 18:18:42.555386: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 18:18:42.556474: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 18:18:42.556656: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 18:18:42.557828: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 18:18:42.558456: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 18:18:42.560863: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 18:18:42.560973: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.561331: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.561612: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 18:18:42.646986: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-04-20 18:18:42.668200: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3696000000 Hz
+2020-04-20 18:18:42.669045: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56537dfab480 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-20 18:18:42.669068: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-20 18:18:42.669257: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.669612: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 18:18:42.669649: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 18:18:42.669664: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 18:18:42.669677: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 18:18:42.669690: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 18:18:42.669706: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 18:18:42.669719: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 18:18:42.669756: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 18:18:42.669828: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.670229: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.670549: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 18:18:42.670574: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 18:18:42.725540: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-20 18:18:42.725576: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0
+2020-04-20 18:18:42.725607: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N
+2020-04-20 18:18:42.725845: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.726275: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.726663: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 18:18:42.727023: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10478 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-04-20 18:18:42.728339: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56537e76b400 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-04-20 18:18:42.728354: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1080 Ti, Compute Capability 6.1
+  0%|                                                                                               | 0/10010 [00:00<?, ?it/s]2020-04-20 18:19:02.457556: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 18:19:02.612247: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 18:19:04.098030: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.42GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there couldbe performance gains if more memory were available.
+2020-04-20 18:19:04.167110: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.61GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there couldbe performance gains if more memory were available.
+2020-04-20 18:19:04.177169: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.41GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there couldbe performance gains if more memory were available.
+2020-04-20 18:19:04.200329: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.83GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there couldbe performance gains if more memory were available.
+2020-04-20 18:19:04.228718: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 745.00MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-04-20 18:19:04.232901: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.61GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there couldbe performance gains if more memory were available.
+2020-04-20 18:19:04.256273: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.31GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there couldbe performance gains if more memory were available.
+2020-04-20 18:19:04.265309: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.83GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there couldbe performance gains if more memory were available.
+2020-04-20 18:19:04.265343: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 449.50MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-04-20 18:19:04.284788: W tensorflow/core/common_runtime/bfc_allocator.cc:243] Allocator (GPU_0_bfc) ran out of memory trying to allocate 604.25MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+100%|████████████████████████████████████████████████| 10010/10010 [1:51:04<00:00,  1.50it/s, loss: 2.0470, accurancy: 0.7891]
+testing...
+100%|███████████████████████████████| 391/391 [01:14<00:00,  5.27it/s, ce: 1.8392, accuracy: 0.7625]
+accuracy 0.7615
+2020-04-20 20:11:18.903408: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-04-20 20:11:18.922365: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:18.922787: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 20:11:18.922980: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 20:11:18.924491: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 20:11:18.925658: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 20:11:18.925874: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 20:11:18.927167: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 20:11:18.927878: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 20:11:18.930545: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 20:11:18.930650: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:18.931077: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:18.931416: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 20:11:19.011131: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-04-20 20:11:19.032252: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3696000000 Hz
+2020-04-20 20:11:19.033150: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560946350eb0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-20 20:11:19.033168: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-20 20:11:19.033368: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:19.033785: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 20:11:19.033833: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 20:11:19.033846: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 20:11:19.033859: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 20:11:19.033871: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 20:11:19.033898: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 20:11:19.033911: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 20:11:19.033924: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 20:11:19.034018: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:19.034410: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:19.034715: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 20:11:19.034753: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 20:11:19.083926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-20 20:11:19.083954: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0
+2020-04-20 20:11:19.083962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N
+2020-04-20 20:11:19.084102: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:19.084539: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:19.084883: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 20:11:19.085200: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10478 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-04-20 20:11:19.086503: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560946b10e10 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-04-20 20:11:19.086518: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1080 Ti, Compute Capability 6.1
+testing multicrop (top-5)...
+  0%|                                                                                               | 0/50000 [00:00<?, ?it/s]2020-04-20 20:11:21.370165: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 20:11:21.502519: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+100%|███████████████████████████████████████████████████████████████| 50000/50000 [15:37<00:00, 53.35it/s, correct_num: 47094]
+top-1 accuracy 0.7805, top-5 accuracy 0.9419.

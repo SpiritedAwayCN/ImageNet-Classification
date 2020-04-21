@@ -26,6 +26,7 @@ class BottleneckBlock(tf.keras.layers.Layer):
     
     def call(self, inputs, training):
         res = self.bn_0(inputs, training=training)
+
         res = self.activation0(res)
         
         if self.projection:
@@ -34,8 +35,8 @@ class BottleneckBlock(tf.keras.layers.Layer):
             shortcut = self.avgpool(res) # 长宽除以2
             shortcut = self.shortcut(shortcut)
         else:
-            shortcut = res
-        
+            shortcut = inputs
+
         res = self.conv_0(res)
 
         res = self.bn_1(res, training=training)
@@ -45,9 +46,8 @@ class BottleneckBlock(tf.keras.layers.Layer):
         res = self.bn_2(res, training=training)
         res = self.activation2(res)
         res = self.conv_2(res)
-
         output = res + shortcut
-        return res
+        return output
     
     # 不写貌似也没啥问题
     # def compute_output_shape(self, input_shape):
@@ -93,6 +93,7 @@ class ResNet_v2_50(tf.keras.models.Model):
         # print('global average-pooling', net.shape)
         net = self.fc(net)
         # print('fully connected', net.shape)
+
         return net
 
 

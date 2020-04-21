@@ -1,0 +1,299 @@
+2020-04-20 13:02:41.462674: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+100%|████████████████████████████| 391/391 [01:34<00:00,  4.12it/s, loss: 3.5618, accurancy: 0.2578]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.05it/s, ce: 3.6413, accuracy: 0.1250]
+accuracy 0.2426
+Epoch 2/50
+100%|████████████████████████████| 391/391 [01:27<00:00,  4.45it/s, loss: 3.1948, accurancy: 0.3359]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 3.5371, accuracy: 0.0000]
+accuracy 0.3528
+Epoch 3/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.44it/s, loss: 2.9400, accurancy: 0.3984]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.68it/s, ce: 3.1648, accuracy: 0.3750]
+accuracy 0.4070
+Epoch 4/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.43it/s, loss: 2.7593, accurancy: 0.4688]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.56it/s, ce: 3.2028, accuracy: 0.5000]
+accuracy 0.4546
+Epoch 5/50
+100%|████████████████████████████| 391/391 [01:27<00:00,  4.46it/s, loss: 2.7441, accurancy: 0.5078]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 3.6566, accuracy: 0.1250]
+accuracy 0.4676
+Epoch 6/50
+100%|████████████████████████████| 391/391 [01:27<00:00,  4.44it/s, loss: 2.3914, accurancy: 0.6172]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.43it/s, ce: 2.4695, accuracy: 0.3750]
+accuracy 0.4958
+Epoch 7/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.43it/s, loss: 2.6644, accurancy: 0.5000]
+testing...
+100%|█████████████████████████████████| 40/40 [00:06<00:00,  5.72it/s, ce: 3.1277, accuracy: 0.0000]
+accuracy 0.5308
+Epoch 8/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.43it/s, loss: 2.2747, accurancy: 0.6172]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.69it/s, ce: 2.5016, accuracy: 0.6250]
+accuracy 0.5622
+Epoch 9/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 2.4461, accurancy: 0.5625]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 3.1902, accuracy: 0.2500]
+accuracy 0.5746
+Epoch 10/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.44it/s, loss: 2.1040, accurancy: 0.7109]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 2.5549, accuracy: 0.5000]
+accuracy 0.5932
+Epoch 11/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.41it/s, loss: 2.1606, accurancy: 0.7031]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.48it/s, ce: 2.6176, accuracy: 0.5000]
+accuracy 0.5910
+Epoch 12/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.42it/s, loss: 2.1062, accurancy: 0.7031]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.62it/s, ce: 1.9538, accuracy: 0.5000]
+accuracy 0.5980
+Epoch 13/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.42it/s, loss: 1.9278, accurancy: 0.7500]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.66it/s, ce: 2.4723, accuracy: 0.5000]
+accuracy 0.6018
+Epoch 14/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.42it/s, loss: 2.1254, accurancy: 0.6797]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.70it/s, ce: 1.9141, accuracy: 0.6250]
+accuracy 0.6514
+Epoch 15/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.41it/s, loss: 2.0403, accurancy: 0.7344]
+testing...
+100%|█████████████████████████████████| 40/40 [00:06<00:00,  5.72it/s, ce: 2.5510, accuracy: 0.3750]
+accuracy 0.6340
+Epoch 16/50
+100%|████████████████████████████| 391/391 [01:27<00:00,  4.44it/s, loss: 1.8150, accurancy: 0.7891]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.61it/s, ce: 1.8841, accuracy: 0.6250]
+accuracy 0.7234
+Epoch 17/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.41it/s, loss: 1.8662, accurancy: 0.7969]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.69it/s, ce: 1.8128, accuracy: 0.6250]
+accuracy 0.7306
+Epoch 18/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.41it/s, loss: 1.7852, accurancy: 0.8281]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.61it/s, ce: 1.7296, accuracy: 0.6250]
+accuracy 0.7288
+Epoch 19/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.39it/s, loss: 1.6185, accurancy: 0.8750]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.57it/s, ce: 1.8495, accuracy: 0.6250]
+accuracy 0.7338
+Epoch 20/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.43it/s, loss: 1.7642, accurancy: 0.8203]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.7994, accuracy: 0.6250]
+accuracy 0.7354
+Epoch 21/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.43it/s, loss: 1.6657, accurancy: 0.8438]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.55it/s, ce: 1.9440, accuracy: 0.6250]
+accuracy 0.7348
+Epoch 22/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.6078, accurancy: 0.9141]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.64it/s, ce: 1.7683, accuracy: 0.6250]
+accuracy 0.7416
+Epoch 23/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.39it/s, loss: 1.6018, accurancy: 0.8906]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.67it/s, ce: 1.9351, accuracy: 0.7500]
+accuracy 0.7436
+Epoch 24/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.7109, accurancy: 0.8125]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.53it/s, ce: 1.8232, accuracy: 0.6250]
+accuracy 0.7432
+Epoch 25/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.6409, accurancy: 0.8359]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.47it/s, ce: 1.8980, accuracy: 0.7500]
+accuracy 0.7454
+Epoch 26/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.5819, accurancy: 0.8984]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.33it/s, ce: 1.8465, accuracy: 0.6250]
+accuracy 0.7466
+Epoch 27/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.39it/s, loss: 1.6236, accurancy: 0.8359]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.51it/s, ce: 2.0131, accuracy: 0.6250]
+accuracy 0.7456
+Epoch 28/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.5413, accurancy: 0.8984]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.57it/s, ce: 1.8904, accuracy: 0.6250]
+accuracy 0.7422
+Epoch 29/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.5329, accurancy: 0.8906]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.58it/s, ce: 2.1195, accuracy: 0.5000]
+accuracy 0.7428
+Epoch 30/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.42it/s, loss: 1.5443, accurancy: 0.9062]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.58it/s, ce: 2.2303, accuracy: 0.6250]
+accuracy 0.7456
+Epoch 31/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.41it/s, loss: 1.5858, accurancy: 0.8750]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.41it/s, ce: 1.9912, accuracy: 0.6250]
+accuracy 0.7524
+Epoch 32/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.5677, accurancy: 0.8828]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.59it/s, ce: 2.0448, accuracy: 0.6250]
+accuracy 0.7486
+Epoch 33/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.39it/s, loss: 1.5740, accurancy: 0.9062]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.48it/s, ce: 1.9682, accuracy: 0.6250]
+accuracy 0.7524
+Epoch 34/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.37it/s, loss: 1.5016, accurancy: 0.9219]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.63it/s, ce: 1.9791, accuracy: 0.6250]
+accuracy 0.7524
+Epoch 35/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.4443, accurancy: 0.9375]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.57it/s, ce: 1.9325, accuracy: 0.6250]
+accuracy 0.7528
+Epoch 36/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.39it/s, loss: 1.5106, accurancy: 0.9297]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.36it/s, ce: 1.9640, accuracy: 0.6250]
+accuracy 0.7508
+Epoch 37/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.4039, accurancy: 0.9375]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.68it/s, ce: 1.9325, accuracy: 0.7500]
+accuracy 0.7506
+Epoch 38/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.4655, accurancy: 0.9141]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.59it/s, ce: 1.9329, accuracy: 0.6250]
+accuracy 0.7514
+Epoch 39/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.37it/s, loss: 1.5973, accurancy: 0.8906]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.59it/s, ce: 1.9955, accuracy: 0.6250]
+accuracy 0.7504
+Epoch 40/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.39it/s, loss: 1.5726, accurancy: 0.8906]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.52it/s, ce: 1.9011, accuracy: 0.6250]
+accuracy 0.7506
+Epoch 41/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.39it/s, loss: 1.5038, accurancy: 0.9297]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.45it/s, ce: 1.9396, accuracy: 0.6250]
+accuracy 0.7526
+Epoch 42/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.5235, accurancy: 0.9219]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.55it/s, ce: 1.8822, accuracy: 0.6250]
+accuracy 0.7542
+Epoch 43/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.5117, accurancy: 0.8750]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.59it/s, ce: 1.9157, accuracy: 0.6250]
+accuracy 0.7524
+Epoch 44/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.4225, accurancy: 0.9453]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.61it/s, ce: 1.9267, accuracy: 0.6250]
+accuracy 0.7536
+Epoch 45/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.39it/s, loss: 1.4292, accurancy: 0.9531]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.52it/s, ce: 1.9152, accuracy: 0.6250]
+accuracy 0.7520
+Epoch 46/50
+100%|████████████████████████████| 391/391 [01:29<00:00,  4.38it/s, loss: 1.5663, accurancy: 0.8672]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.57it/s, ce: 1.9242, accuracy: 0.6250]
+accuracy 0.7514
+Epoch 47/50
+100%|████████████████████████████| 391/391 [01:30<00:00,  4.32it/s, loss: 1.4185, accurancy: 0.9531]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.49it/s, ce: 1.9473, accuracy: 0.6250]
+accuracy 0.7522
+Epoch 48/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.4753, accurancy: 0.9141]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.59it/s, ce: 1.9440, accuracy: 0.6250]
+accuracy 0.7526
+Epoch 49/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.40it/s, loss: 1.5282, accurancy: 0.8750]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.58it/s, ce: 1.9121, accuracy: 0.6250]
+accuracy 0.7518
+Epoch 50/50
+100%|████████████████████████████| 391/391 [01:28<00:00,  4.42it/s, loss: 1.5537, accurancy: 0.9141]
+testing...
+100%|█████████████████████████████████| 40/40 [00:07<00:00,  5.58it/s, ce: 1.9029, accuracy: 0.6250]
+accuracy 0.7528
+(dl) root@238c475fb76b:~/imageNet/ResNet50# python test.py
+2020-04-20 14:23:14.297046: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-04-20 14:23:14.310049: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.310427: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 14:23:14.310626: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 14:23:14.311853: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 14:23:14.312903: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 14:23:14.313081: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 14:23:14.314157: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 14:23:14.314730: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 14:23:14.317062: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 14:23:14.317168: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.317553: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.317854: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 14:23:14.360424: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-04-20 14:23:14.384183: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3696000000 Hz
+2020-04-20 14:23:14.384692: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56212d577a40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-20 14:23:14.384718: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-20 14:23:14.384952: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.385289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.683GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2020-04-20 14:23:14.385324: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 14:23:14.385338: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 14:23:14.385350: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2020-04-20 14:23:14.385362: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2020-04-20 14:23:14.385374: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2020-04-20 14:23:14.385386: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2020-04-20 14:23:14.385398: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-04-20 14:23:14.385456: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.385859: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.386155: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-04-20 14:23:14.386177: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2020-04-20 14:23:14.493755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-20 14:23:14.493791: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0
+2020-04-20 14:23:14.493803: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N
+2020-04-20 14:23:14.503193: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.503561: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.503881: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2020-04-20 14:23:14.504214: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10478 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-04-20 14:23:14.505563: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56212dd379e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-04-20 14:23:14.505581: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 1080 Ti, Compute Capability 6.1
+testing multicrop (top-5)...
+  0%|                                                                      | 0/5000 [00:00<?, ?it/s]2020-04-20 14:23:15.704011: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2020-04-20 14:23:15.845910: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+100%|███████████████████████████████████████| 5000/5000 [00:38<00:00, 129.24it/s, correct_num: 4679]
+top-1 accuracy 0.7826, top-5 accuracy 0.9358.
