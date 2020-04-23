@@ -59,6 +59,7 @@ def test_multicrop(model, top_k=1):
     print('top-1 accuracy {:.4f}, top-{:d} accuracy {:.4f}.'.format(total_correct_top1 / c.val_num, top_k, total_correct_num / c.val_num))
 
 if __name__=='__main__':
+    # from ResNetSE_18 import ResNetSE_18
     from ResNetV2_50 import ResNet_v2_50
 
     physical_devices = tf.config.experimental.list_physical_devices('GPU')
@@ -67,6 +68,6 @@ if __name__=='__main__':
     model = ResNet_v2_50()
     model.build(input_shape=(None,) + c.input_shape)
 
-    model.load_weights('./h5/ResNetV2-50-cd.h5')
+    model.load_weights('./h5/cd-ResNetV2-50.h5')
     
     test_multicrop(model, top_k=5)
