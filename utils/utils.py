@@ -23,17 +23,17 @@ def crop_ten(image):
     center_crop_y = (height - input_height) // 2
 
     images = []
-    images.append(image[:input_height, :input_width, :])  # left top
-    images.append(image[:input_height, -input_width:, :])  # right top
-    images.append(image[-input_height:, :input_width, :])  # left bottom
-    images.append(image[-input_height:, -input_width:, :])  # right bottom
+    images.append(image[:input_height, :input_width, :])  
+    images.append(image[:input_height, -input_width:, :])
+    images.append(image[-input_height:, :input_width, :])
+    images.append(image[-input_height:, -input_width:, :])
     images.append(image[center_crop_y: center_crop_y + input_height, center_crop_x: center_crop_x + input_width, :])
 
     image = cv2.flip(image, 1)
-    images.append(image[:input_height, :input_width, :])  # left top
-    images.append(image[:input_height, -input_width:, :])  # right top
-    images.append(image[-input_height:, :input_width, :])  # left bottom
-    images.append(image[-input_height:, -input_width:, :])  # right bottom
+    images.append(image[:input_height, :input_width, :])  
+    images.append(image[:input_height, -input_width:, :])
+    images.append(image[-input_height:, :input_width, :])
+    images.append(image[-input_height:, -input_width:, :])
     images.append(image[center_crop_y: center_crop_y + input_height, center_crop_x: center_crop_x + input_width, :])
 
     return images
