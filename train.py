@@ -6,13 +6,11 @@ from tqdm import tqdm, trange
 from tensorflow import keras
 
 import constants as c
-from ResNetV2_50 import ResNet_v2_50
-from ResNetV2_18 import ResNet_v2_18
-from data import get_train_dataset, get_val_dataset
-from utils import l2_loss_of_model, correct_number
+from models.ResNetV2_50 import ResNet_v2_50
+from models.ResNetV2_18 import ResNet_v2_18
+from utils.data import get_train_dataset, get_val_dataset
+from utils.utils import l2_loss_of_model, correct_number
 from test import test
-
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 @tf.function
 def train_step(model, images, labels, optimizer):
@@ -96,6 +94,8 @@ if __name__=='__main__':
         model.load_weights('ResNet18MD-warmup.h5')
     else:
         model.load_weights('ResNet18MD-{:0>2}.h5'.format(init_epoch))
+    
+    # learning_rate_schedules = keras.experimental.CosineDecay(initial_learning_rate=0.05,decay_steps=c.total_epoches * c.iterations_per_epoch, alpha=0.0001)
     learning_rate_schedules = CustomSchedule()
     optimizer = keras.optimizers.SGD(learning_rate=learning_rate_schedules, momentum=0.9, nesterov=True)
 

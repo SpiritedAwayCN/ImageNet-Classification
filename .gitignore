@@ -1,6 +1,3 @@
 .vscode/*
-ResNet-Keras/checkpoints/*
-Official-Sample/tmp/*
+*.pyc
 *.h5
-*/.vscode/*
-ImageNet-ResNetV2/*

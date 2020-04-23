@@ -1,10 +1,10 @@
 input_shape = 224, 224, 3
-num_class = 100#0
+num_class = 100 # 1000
 total_epoches = 50
 
 batch_size = 128
-train_num = 50000
-val_num = 5000
+train_num = 50000 # 1281167
+val_num = 5000 # 50000
 
 iterations_per_epoch = train_num // batch_size + 1
 test_iterations = val_num // batch_size + 1

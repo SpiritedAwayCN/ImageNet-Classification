@@ -3,8 +3,8 @@ import numpy as np
 from tensorflow import keras
 from tqdm import trange
 
-from data import get_val_dataset, get_predict_dataset
-from utils import correct_number
+from utils.data import get_val_dataset, get_predict_dataset
+from utils.utils import correct_number
 import constants as c
 
 @tf.function
@@ -16,7 +16,6 @@ def test_step(model, images, labels):
 
 def test(model):
     data_iterator = get_val_dataset().__iter__()
-
     total_correct_num = 0
 
     print("testing...")
@@ -60,14 +59,14 @@ def test_multicrop(model, top_k=1):
 
 if __name__=='__main__':
     # from ResNetSE_18 import ResNetSE_18
-    from ResNetV2_50 import ResNet_v2_50
+    from models.ResNetV2_18 import ResNet_v2_18
 
     physical_devices = tf.config.experimental.list_physical_devices('GPU')
     tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
 
-    model = ResNet_v2_50()
+    model = ResNet_v2_18()
     model.build(input_shape=(None,) + c.input_shape)
 
-    model.load_weights('./h5/cd-ResNetV2-50.h5')
+    model.load_weights('./h5/cd-ResNetV2-18.h5')
     
     test_multicrop(model, top_k=5)
