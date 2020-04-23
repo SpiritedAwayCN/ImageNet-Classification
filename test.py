@@ -67,6 +67,6 @@ if __name__=='__main__':
     model = ResNetSE_50()
     model.build(input_shape=(None,) + c.input_shape)
 
-    model.load_weights('./h5/cd-ResNetV2-18.h5')
+    model.load_weights('./h5/ResNetSE-50.h5')
     
     test_multicrop(model, top_k=5)
