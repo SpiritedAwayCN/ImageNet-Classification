@@ -107,18 +107,18 @@ def load_image_multicrop(path, labels, seam_carv=False):
     label = keras.utils.to_categorical(labels, c.num_class)
     return image, label
 
-def get_train_dataset(list_path="./data/ILSVRC2012/train_label.txt"):
-    images, labels = load_list(list_path, "./ILSVRC2012/train")
-    # images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\train")
+def get_train_dataset(list_path="./data/miniImageNet/train_label.txt"):
+    # images, labels = load_list(list_path, "./ILSVRC2012/train")
+    images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\train")
     dataset = tf.data.Dataset.from_tensor_slices((images, labels))
     dataset = dataset.shuffle(len(images)).repeat()
     dataset = dataset.map(lambda x, y: tf.py_function(load_image, inp=[x, y, True], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
     dataset = dataset.batch(c.batch_size)
     return dataset
 
-def get_val_dataset(list_path="./data/ILSVRC2012/val_label.txt"):
-    images, labels = load_list(list_path, "./ILSVRC2012/val")
-    # images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\val")
+def get_val_dataset(list_path="./data/miniImageNet/val_label.txt"):
+    # images, labels = load_list(list_path, "./ILSVRC2012/val")
+    images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\val")
     dataset = tf.data.Dataset.from_tensor_slices((images, labels))
     dataset = dataset.map(lambda x, y: tf.py_function(load_image, inp=[x, y, False], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
     dataset = dataset.batch(c.batch_size)

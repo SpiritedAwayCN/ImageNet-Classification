@@ -6,8 +6,7 @@ from tqdm import tqdm, trange
 from tensorflow import keras
 
 import constants as c
-from models.ResNetV2_50 import ResNet_v2_50
-from models.ResNetV2_18 import ResNet_v2_18
+from models.AlexNet_bn import AlexNet_BN
 from utils.data import get_train_dataset, get_val_dataset
 from utils.utils import l2_loss_of_model, correct_number
 from test import test
@@ -76,27 +75,27 @@ if __name__=='__main__':
     tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
     # tf.keras.backend.set_floatx('float16')
 
-    model = ResNet_v2_18()
+    model = AlexNet_BN()
     model.build(input_shape=(None,) + c.input_shape)
 
-    check_point_files = [int(re.findall(r"(\d+).h5",file)[0]) for file in os.listdir("./") if re.match(r'ResNet18MD-\d+.h5$', file)]
+    check_point_files = [int(re.findall(r"(\d+).h5",file)[0]) for file in os.listdir("./") if re.match(r'AlexNetBN-\d+.h5$', file)]
     check_point_files.sort()
     init_epoch = 0 if len(check_point_files)==0 else check_point_files[-1]
 
     train_iter = get_train_dataset().__iter__()
 
-    if init_epoch==0 and not os.path.isfile("ResNet18MD-warmup.h5"):
+    if init_epoch==0 and not os.path.isfile("AlexNetBN-warmup.h5"):
         # warm up - 1 epoch
         warmup(model, train_iter)
-        model.save_weights('ResNet18MD-warmup.h5')
+        model.save_weights('AlexNetBN-warmup.h5')
         test(model)
     elif init_epoch==0:
-        model.load_weights('ResNet18MD-warmup.h5')
+        model.load_weights('AlexNetBN-warmup.h5')
     else:
-        model.load_weights('ResNet18MD-{:0>2}.h5'.format(init_epoch))
+        model.load_weights('AlexNetBN-{:0>2}.h5'.format(init_epoch))
     
-    # learning_rate_schedules = keras.experimental.CosineDecay(initial_learning_rate=0.05,decay_steps=c.total_epoches * c.iterations_per_epoch, alpha=0.0001)
-    learning_rate_schedules = CustomSchedule()
+    learning_rate_schedules = keras.experimental.CosineDecay(initial_learning_rate=0.05,decay_steps=c.total_epoches * c.iterations_per_epoch, alpha=0.0001)
+    # learning_rate_schedules = CustomSchedule()
     optimizer = keras.optimizers.SGD(learning_rate=learning_rate_schedules, momentum=0.9, nesterov=True)
 
     # 我真是个天才()
