@@ -71,8 +71,8 @@ class CustomSchedule(tf.keras.optimizers.schedules.LearningRateSchedule):
 
 if __name__=='__main__':
     # gpu config
-    physical_devices = tf.config.experimental.list_physical_devices('GPU')
-    tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
+    # physical_devices = tf.config.experimental.list_physical_devices('GPU')
+    # tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
     # tf.keras.backend.set_floatx('float16')
 
     model = AlexNet_BN()
@@ -105,5 +105,5 @@ if __name__=='__main__':
     for epoch in range(init_epoch, c.total_epoches):
         print("Epoch {:d}/{:d}".format(epoch + 1, c.total_epoches))
         train(model, train_iter, optimizer)
-        model.save_weights('ResNet50MD-{:0>2}.h5'.format(epoch + 1))
+        model.save_weights('AlexNetBN-{:0>2}.h5'.format(epoch + 1))
         test(model)

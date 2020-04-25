@@ -124,9 +124,9 @@ def get_val_dataset(list_path="./data/miniImageNet/val_label.txt"):
     dataset = dataset.batch(c.batch_size)
     return dataset
 
-def get_predict_dataset(list_path="./data/miniImageNet/test_label.txt"):
+def get_predict_dataset(list_path="./data/miniImageNet/val_label.txt"):
     # images, labels = load_list(list_path, "./ILSVRC2012/val")
-    images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\test")
+    images, labels = load_list(list_path, "E:\\Programming projects\\ILSVRC2012\\mini-imagenet\\val")
     dataset = tf.data.Dataset.from_tensor_slices((images, labels))
     dataset = dataset.map(lambda x, y: tf.py_function(load_image_multicrop, inp=[x, y], Tout=[tf.float32, tf.float32]), num_parallel_calls=tf.data.experimental.AUTOTUNE)
     return dataset

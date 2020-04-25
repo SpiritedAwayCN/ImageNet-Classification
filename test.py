@@ -58,15 +58,15 @@ def test_multicrop(model, top_k=1):
     print('top-1 accuracy {:.4f}, top-{:d} accuracy {:.4f}.'.format(total_correct_top1 / c.val_num, top_k, total_correct_num / c.val_num))
 
 if __name__=='__main__':
-    from models.ResNetSE_50 import ResNetSE_50
+    from models.AlexNet_bn import AlexNet_BN
     # from models.ResNetV2_18 import ResNet_v2_18
 
     physical_devices = tf.config.experimental.list_physical_devices('GPU')
     tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
 
-    model = ResNetSE_50()
+    model = AlexNet_BN()
     model.build(input_shape=(None,) + c.input_shape)
 
-    model.load_weights('./h5/ResNetSE-50.h5')
+    model.load_weights('./h5/AlexNet-BN.h5')
     
     test_multicrop(model, top_k=5)
