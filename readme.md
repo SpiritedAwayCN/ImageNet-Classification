@@ -2,7 +2,7 @@
 
 AlexNet, ZFNet, ResNet, ResNetV2, SENet were implemented and some models trained on ILSVRC2012 and mini ImageNet dataset are available. 
 
-[TOD]
+[TOC]
 
 ## Accuracy
 
