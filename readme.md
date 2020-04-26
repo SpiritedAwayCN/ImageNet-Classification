@@ -104,4 +104,4 @@ As the consequence, it's easy to have the problem that ```CUDA out of memory``` 
 
 * The numerical characteristics of ILSVRC 2012 dataset and some implementation details of data input & data augmentation come from [ImageNet_ResNet_Tensorflow2.0](https://github.com/Apm5/ImageNet_ResNet_Tensorflow2.0) by [Apm5](https://github.com/Apm5). 
 
-**Note: **Numerical characteristics of mini ImageNet can be extracted by ```./data/utils/image_cal.py```, it can also extract ILSVRC2012 dataset as well but costs plenty of time since the training set is too large.
+**Note: ** Numerical characteristics of mini ImageNet can be extracted by ```./data/utils/image_cal.py```, it can also extract ILSVRC2012 dataset as well but costs plenty of time since the training set is too large.
