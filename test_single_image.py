@@ -10,13 +10,15 @@ from utils.data import rescale_short_edge
 from utils.utils import crop_ten
 from utils import seam_carving
 
-model_path = './h5/ocd-ResNetV2-50.h5'
+model_path_1 = './h5/ocd-ResNetV2-50.h5'
+model_path_2 = './h5/oResNetV2-50.h5'
 image_path = './image.jpg'
 show_top_k = 10
 apply_seam_carving = False
 
-# comment below if appalying miniImageNet
+# comment below if applying miniImageNet
 c.num_class, c.mean, c.std = 1000, c.mean_o, c.std_o
+
 
 def load_image_multicrop(path):
     image = cv2.imread(path).astype(np.float32)
@@ -31,23 +33,33 @@ def load_image_multicrop(path):
 
     for i in range(3):
         image[..., i] = (image[..., i] - c.mean[i]) / c.std[i]
-    
+
     return image
 
 
 physical_devices = tf.config.experimental.list_physical_devices('GPU')
-tf.config.experimental.set_memory_growth(device=physical_devices[0], enable=True)
+tf.config.experimental.set_memory_growth(
+    device=physical_devices[0], enable=True)
 
 print("loading model...")
-model = ResNet_v2_50()
-model.build(input_shape=(None,) + c.input_shape)
-model.load_weights(model_path)
+model_1 = ResNet_v2_50()
+model_1.build(input_shape=(None,) + c.input_shape)
+model_1.load_weights(model_path_1)
+
+model_2 = ResNet_v2_50()
+model_2.build(input_shape=(None,) + c.input_shape)
+model_2.load_weights(model_path_2)
 
 print("loading image...")
 image = load_image_multicrop(image_path)
 print("predicting image...")
-prediction = model(image, training=False)
-prediction = tf.reduce_mean(prediction, axis=0)
+prediction_1 = model_1(image, training=False)
+prediction_1 = tf.reduce_mean(prediction_1, axis=0)
+
+prediction_2 = model_2(image, training=False)
+prediction_2 = tf.reduce_mean(prediction_2, axis=0)
+
+prediction = tf.add(prediction_1, prediction_2)/2
 
 index_list = np.argpartition(prediction, -show_top_k)[-show_top_k:]
 

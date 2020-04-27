@@ -8,12 +8,15 @@ AlexNet, ZFNet, ResNet, ResNetV2, SENet were implemented and some models trained
 | --------------- | ------------- | ------------- | ------------- | -------------- | -------------- |
 | ResNetSE-50     | mini imageNet | 16.36%        | 4.80%         | 16.78%         | 4.78%          |
 | ocd-ResNetV2-50 | ILSVRC 2012   | 21.95%        | 5.81%         | ---            | ---            |
+| Average         | ILSVRC 2012   | 21.14%        | 5.50%         | ---            | ---            |
 
-**Note:** Only the best models for each dataset are listed here. For error rates of all 13 provided models, please check ```test_single_image.ipynb```.
+**Note:** Only the best models for each dataset are listed here, "Average" is predicted by the average score of two ResNetV2-50 models trained  independently on ILSVRC 2012  dataset. For error rates of all 13 provided models, please check ```test_single_image.ipynb```.
 
 The weights files are provided here: [To Be Update]()
 
-It is strongly recommended to save the file in the ```./h5``` directory, since test function will automatically load models there.
+中国大陆地区可从这里下载 For friends in China Mainland: [To Be Update]()
+
+It is strongly recommended to save the weights files in ```./h5``` directory, since test function will automatically load models there.
 
 ## Requirements
 
@@ -58,7 +61,7 @@ All the models above were trained on mini imageNet dataset and ResNetV2 was trai
 
 You can directly use the provided weights files to predict your own image. ```./test_single_image.ipynb``` is the user interface with detailed instructions and intuitive visualization. Check it for more information.
 
-Meanwhile, ```./test_single_image.py``` is another predictor and able to compute average scores on two different models. You are supposed to modify the code before running, **deprecated if you don't know what the code is doing**.
+Meanwhile, ```./test_single_image.py``` is another predictor and able to compute average scores on two different models. You may need to modify the code before running, **deprecated if you don't know what the code is doing**.
 
 ### For training
 
@@ -90,16 +93,16 @@ Then, run these command to start your testing, top-1 and top-5 accuracy will be 
 $ python3 test.py
 ```
 
-The default code will test ILSVRC2012 validation set of ```./h5/ocd-ResNetV2-50.h5``` model.
+The default code will test ILSVRC2012 validation set of ```./h5/ocd-ResNetV2-50.h5``` model. 
 
 ## Limitation
 
 All trainable variables were saved on GPU rather than CPU, and it will only use a single GPU to compute even if there are multiple GPUs available. This is because my computer has only one GPU, not able to debug or run multi-gpu training.
 
-As the consequence, it's easy to have the problem that ```CUDA out of memory``` if the model is too deep and batch size if too large. Experiments shows that this will happen when using ResNetSE-50 model with batch size of 128. Try to decrease the batch size, simplify your model or use ```tf.float16``` to train if you encounter this problem.
+As the consequence, it's easy to have the problem that ```CUDA out of memory``` if the model is too deep and batch size is too large. Experiments shows that this will happen when using ResNetSE-50 model with batch size of 128. Try to decrease the batch size, simplify your model or use ```tf.float16``` to train if you encounter this problem.
 
 ## References
 
 * The numerical characteristics of ILSVRC 2012 dataset and some implementation details of data input & data augmentation come from [ImageNet_ResNet_Tensorflow2.0](https://github.com/Apm5/ImageNet_ResNet_Tensorflow2.0) by [Apm5](https://github.com/Apm5). 
 
-**Note:** Numerical characteristics of mini ImageNet can be extracted by ```./data/utils/image_cal.py```, it can also extract ILSVRC2012 dataset as well but costs plenty of time since the training set is too large.
+**Note:** Numerical characteristics of mini ImageNet can be extracted by ```./data/utils/image_cal.py```, it can also extract them from ILSVRC2012 dataset as well but costs plenty of time since the training set is too large.
