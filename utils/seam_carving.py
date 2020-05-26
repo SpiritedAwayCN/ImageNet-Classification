@@ -1,40 +1,46 @@
 import cv2
 import numpy as np
 from tqdm import trange
-from scipy.ndimage.filters import convolve
+import tensorflow as tf
 
 
 def calc_energy(img):
-    filter_du = np.array([
+    filter_du = tf.constant([
         [1.0, 2.0, 1.0],
         [0.0, 0.0, 0.0],
         [-1.0, -2.0, -1.0],
     ])
     # 这会将它从2D滤波转换为3D滤波器
     # 为每个通道：R，G，B复制相同的滤波器
-    filter_du = np.stack([filter_du] * 3, axis=2)
+    filter_du = tf.stack([filter_du] * 3, axis=2)
 
-    filter_dv = np.array([
+    filter_dv = tf.constant([
         [1.0, 0.0, -1.0],
         [2.0, 0.0, -2.0],
         [1.0, 0.0, -1.0],
     ])
     # 这会将它从2D滤波转换为3D滤波器
     # 为每个通道：R，G，B复制相同的滤波器
-    filter_dv = np.stack([filter_dv] * 3, axis=2)
+    filter_dv = tf.stack([filter_dv] * 3, axis=2)
+    r, c, v = tf.shape(img)
+    img = tf.reshape(img, [1, r, c, v])
+    filter_du = tf.reshape(filter_du, [3, 3, 3, 1])
+    filter_dv = tf.reshape(filter_dv, [3, 3, 3, 1])
 
-    img = img.astype('float32')
-    convolved = np.absolute(convolve(img, filter_du)) + np.absolute(
-        convolve(img, filter_dv))
+    img = tf.cast(img, dtype=tf.float32)
+    x = tf.nn.conv2d(img, filter_du, strides=[1, 1, 1, 1], padding="SAME")
+    y = tf.nn.conv2d(img, filter_dv, strides=[1, 1, 1, 1], padding="SAME")
+    convolved = tf.math.abs(x + tf.math.abs(y))
 
+    a, b, c, d = tf.shape(convolved)
     # 我们计算红，绿，蓝通道中的能量值之和
-    energy_map = convolved.sum(axis=2)
+    energy_map = tf.reshape(convolved, [b, c])
 
     return energy_map
 
 
 def crop_c(img):
-    r, c, _ = img.shape
+    r, c, _ = tf.shape(img)
 
     for i in trange(c - 224):
         img = carve_column(img)
@@ -43,9 +49,9 @@ def crop_c(img):
 
 
 def crop_r(img):
-    img = np.rot90(img, 1, (0, 1))
+    img = tf.image.rot90(img, 1)
     img = crop_c(img)
-    img = np.rot90(img, 3, (0, 1))
+    img = tf.image.rot90(img, 3)
     return img
 
 
@@ -55,22 +61,22 @@ def carve_column(img):
     M, backtrack = minimum_seam(img)
     mask = np.ones((r, c), dtype=np.bool)
 
-    j = np.argmin(M[-1])
+    j = tf.math.argmin(M[-1])
     for i in reversed(range(r)):
         mask[i, j] = False
         j = backtrack[i, j]
 
-    mask = np.stack([mask] * 3, axis=2)
-    img = img[mask].reshape((r, c - 1, 3))
-    return img
+    mask = tf.stack([mask] * 3, axis=2)
+    img = tf.reshape(img[mask],[r, c - 1, 3])
+    return img.numpy()
 
 
 def minimum_seam(img):
     r, c, _ = img.shape
-    energy_map = calc_energy(img)
+    M = calc_energy(img)
+    backtrack = np.zeros(tf.shape(M), dtype=np.int)
 
-    M = energy_map.copy()
-    backtrack = np.zeros_like(M, dtype=np.int)
+    M = M.numpy()
 
     for i in range(1, r):
         for j in range(0, c):
@@ -86,7 +92,7 @@ def minimum_seam(img):
 
             M[i, j] += min_energy
 
-    return M, backtrack
+    return tf.convert_to_tensor(M), tf.convert_to_tensor(backtrack)
 
 
 def rescale_short_edge(image, size=None):
@@ -102,8 +108,11 @@ def rescale_short_edge(image, size=None):
 def carve(img):
     r, c, _ = img.shape
     img = rescale_short_edge(img, 224)
+
+    img = tf.convert_to_tensor(img)
     if r > c:
         out = crop_r(img)
     else:
         out = crop_c(img)
     return out
+
