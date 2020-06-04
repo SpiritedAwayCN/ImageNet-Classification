@@ -27,13 +27,13 @@ def rescale_short_edge(image, new_size = None):
 
 def augment(image):
     # 长边伸缩
-    height, weight, _ = np.shape(image)
-    ratio = np.random.uniform(0.8, 1.25)
-    if height >= weight:
-        new_size = (weight, int(height * ratio)) # 反的
-    else:
-        new_size = (int(weight * ratio), height)
-    image = cv2.resize(image, new_size)
+#     height, weight, _ = np.shape(image)
+#     ratio = np.random.uniform(0.8, 1.25)
+#     if height >= weight:
+#         new_size = (weight, int(height * ratio)) # 反的
+#     else:
+#         new_size = (int(weight * ratio), height)
+#     image = cv2.resize(image, new_size)
 
     # 短边变为指定大小
     image = rescale_short_edge(image)
@@ -49,14 +49,14 @@ def augment(image):
         image = cv2.flip(image, 1)
 
     # hsv上的偏移
-    # offset_h = np.random.uniform(-18, 18) #这个不能太过分
-    # offset_s = np.random.uniform(0.8, 1.25)
-    # offset_v = np.random.uniform(0.8, 1.25)
-    # image_hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    # image_hsv[:, :, 0] = (image_hsv[:, :, 0] + offset_h) % 360.
-    # image_hsv[:, :, 1] = np.minimum(image_hsv[:, :, 1] * offset_s, 1.)
-    # image_hsv[:, :, 2] = np.minimum(image_hsv[:, :, 2] * offset_v, 255.)
-    # image = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2BGR)
+#     offset_h = np.random.uniform(-18, 18) #这个不能太过分
+    offset_s = np.random.uniform(0.8, 1.25)
+    offset_v = np.random.uniform(0.8, 1.25)
+    image_hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+#     image_hsv[:, :, 0] = (image_hsv[:, :, 0] + offset_h) % 360.
+    image_hsv[:, :, 1] = np.minimum(image_hsv[:, :, 1] * offset_s, 1.)
+    image_hsv[:, :, 2] = np.minimum(image_hsv[:, :, 2] * offset_v, 255.)
+    image = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2BGR)
 
     # pca噪音 复用了两个变量
     offset_h = np.random.normal(0, 0.1, size=(3,))
