@@ -4,7 +4,7 @@ AlexNet, ZFNet, ResNet, ResNetV2, SENet were implemented and some models trained
 
 ## Accuracy
 
-| model name      | dataset       | top-1 val err | top-5 val err | top-1 test err | top-1 test err |
+| model name      | dataset       | top-1 val err | top-5 val err | top-1 test err | top-5 test err |
 | --------------- | ------------- | ------------- | ------------- | -------------- | -------------- |
 | ResNetSE-50     | mini imageNet | 16.36%        | 4.80%         | 16.78%         | 4.78%          |
 | ocd-ResNetV2-50 | ILSVRC 2012   | 21.95%        | 5.81%         | ---            | ---            |
@@ -14,7 +14,7 @@ AlexNet, ZFNet, ResNet, ResNetV2, SENet were implemented and some models trained
 
 The weights files are provided here: [To Be Update]()
 
-中国大陆地区可从这里下载 For friends in China Mainland: [To Be Update]()
+中国大陆地区可从这里下载 For friends in China Mainland: [网盘下载](https://disk.pku.edu.cn:443/link/1D00E5B1E1F7931ACFF5F9DD6DDA87DF)
 
 It is strongly recommended to save the weights files in ```./h5``` directory, since test function will automatically load models there.
 
@@ -32,7 +32,6 @@ It is strongly recommended to save the weights files in ```./h5``` directory, si
 * tensorflow >= 2.0.0
 * opencv-python
 * numpy
-* scipy (if applying seam carving)
 * tqdm >= 4.42.0 (if applying seam carving)
 
 ## Models
